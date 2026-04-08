@@ -36,7 +36,7 @@ public class TelecommandeTest {
 
         t.activerLampe(0);
 
-        assertTrue(l.toString().contains("true"));
+        assertTrue(l.toString().contains("On"));
     }
 
     @Test
@@ -48,7 +48,7 @@ public class TelecommandeTest {
 
         t.activerLampe(1);
 
-        assertTrue(l2.toString().contains("true"));
+        assertTrue(l2.toString().contains("On"));
     }
 
     @Test
