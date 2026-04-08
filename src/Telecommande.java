@@ -1,38 +1,43 @@
-import java.util.List;
 import java.util.ArrayList;
 
 public class Telecommande {
 
-    private List<Lampe> lampes;
+    private ArrayList<Lampe> lampes;
 
-    // Constructeur vide
     public Telecommande() {
-        this.lampes = new ArrayList<>();
+        lampes = new ArrayList<>();
     }
 
-    // Ajouter une lampe
-    public void ajouterLampe(Lampe l) {
-        throw new Error("code non ecrit");
+    public void ajouterLampe(Lampe lampe) {
+        lampes.add(lampe);
     }
 
-    // Activer une lampe par indice
     public void activerLampe(int indiceLampe) {
-        throw new Error("code non ecrit");
+        if (indiceLampe < 0 || indiceLampe >= lampes.size()) {
+            throw new Error("Indice invalide");
+        }
+        lampes.get(indiceLampe).allumer();
     }
 
-    // Désactiver une lampe par indice
     public void desactiverLampe(int indiceLampe) {
-        throw new Error("code non ecrit");
+        if (indiceLampe < 0 || indiceLampe >= lampes.size()) {
+            throw new Error("Indice invalide");
+        }
+        lampes.get(indiceLampe).eteindre();
     }
 
-    // Activer toutes les lampes
     public void activerTout() {
-        throw new Error("code non ecrit");
+        for (Lampe l : lampes) {
+            l.allumer();
+        }
     }
 
-    // toString
     @Override
     public String toString() {
-        throw new Error("code non ecrit");
+        String result = "";
+        for (int i = 0; i < lampes.size(); i++) {
+            result += i + " : " + lampes.get(i) + "\n";
+        }
+        return result;
     }
 }
