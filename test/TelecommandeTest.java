@@ -32,30 +32,30 @@ public class TelecommandeTest {
     public void testActiverLampePosition0() {
         Telecommande t = new Telecommande();
         Lampe l = new Lampe("Salon");
-        t.ajouterLampe(l);
+        t.ajouterAppareil(l);
 
-        t.activerLampe(0);
+        t.activerAppareil(0);
 
-        assertTrue(l.toString().contains("On"));
+        assertTrue(l.toString().contains("true"));
     }
 
     @Test
-    public void testActiverLampePosition1() {
+    public void testactiverAppareilPosition1() {
         Telecommande t = new Telecommande();
-        t.ajouterLampe(new Lampe("Salon"));
+        t.ajouterAppareil(new Lampe("Salon"));
         Lampe l2 = new Lampe("Cuisine");
-        t.ajouterLampe(l2);
+        t.ajouterAppareil(l2);
 
-        t.activerLampe(1);
+        t.activerAppareil(1);
 
-        assertTrue(l2.toString().contains("On"));
+        assertTrue(l2.toString().contains("true"));
     }
 
     @Test
-            (expected = Error.class)
-    public void testActiverLampeInexistante() {
+    (expected = Error.class)
+    public void testactiverAppareilInexistante() {
         Telecommande t = new Telecommande();
 
-        t.activerLampe(0);
+        t.activerAppareil(0);
     }
 }
