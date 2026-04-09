@@ -1,0 +1,20 @@
+Compte-Rendu TD5 SCHELTIEN Mattéo MARIN Clément
+
+Question 3)
+Pour éviter la duplication / multiplication de méthodes déjà existantes, nous avons crée une interface qui a regroupé les appareils pouvant être géré par une télécommande.
+
+
+Question 5)
+Nous avons effectivement un copier coller des méthodes activer et désactiver, maintenant qu'on a une interface, le code est plus facile à maintenir puisque peu voir pas de modification sont à faire, surtout si on rajoute un nouvel appareil de 0, mais si (hypothétiquement) quelqu'un nous donnait un objet déjà fait / coder, là nous aurions quelques modifications à faire.
+
+Question 6)
+Les flèches représentantes les associations est la flèche de télécommande à appareil, si hifi est modifié, la classe télécommande ne fonctionnera plus et nous devrons remodifier tout le code.
+
+Question 7)
+Comme la classe bibliothèque, la classe télécommande permet de gérer les appareils électroniques, c'est elle qui a les méthodes pour allumer et éteindre les appareils, mais chaque appareil est différent l'un de l'autre, comme pour bibliothèque qui a différents livres.
+
+Question 12)
+Notre nouvelle conception nous permet d'ajouter plus facilement un appareil, puisque les méthodes sont maintenant dans l'interface, donc moins besoin de réfléchir au code.
+
+Question 13)
+Il faut que le nouvel appareil hérite des méthodes allumer et éteindre, ainsi que augmenter et baisser, par exemple pour le son, la luminosité, intensité etc etc.
