@@ -1,9 +1,12 @@
 @startuml
 class Hifi{
 -son : int
-+allumer()
-+eteindre()
 +toString()
+}
+
+Interface Appareil{
++AllumerAppareil
++EteindreAppareil
 }
 
 class Telecommande{
@@ -11,18 +14,14 @@ class Telecommande{
 -lampes: Lampe[]
 -hifis: Hifi[]
 +ajouterAppareil()
-+allumer(int)
-+eteindre(int)
-
 }
 
 class Lampe{
 -nom: String
-+allumer()
-+eteindre()
-
++toString()
 }
 
-Hifi "1..*" <-- Telecommande
-Lampe "1..*"<-- Telecommande
+Appareil"1..*" <-- Telecommande
+Hifi "1..*" <-- Appareil
+Lampe "1..*" <-- Appareil
 @enduml
