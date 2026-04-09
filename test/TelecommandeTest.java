@@ -10,7 +10,7 @@ public class TelecommandeTest {
         Lampe l = new Lampe("Salon");
 
         // action
-        t.ajouterLampe(l);
+        t.ajouterAppareil(l);
 
         // vérification
         assertTrue(t.toString().contains("Salon"));
@@ -19,11 +19,11 @@ public class TelecommandeTest {
     @Test
     public void testAjoutLampeAvecUneLampe() {
         Telecommande t = new Telecommande();
-        t.ajouterLampe(new Lampe("Salon"));
+        t.ajouterAppareil(new Lampe("Salon"));
 
         Lampe l2 = new Lampe("Cuisine");
 
-        t.ajouterLampe(l2);
+        t.ajouterAppareil(l2);
 
         assertTrue(t.toString().contains("Cuisine"));
     }
