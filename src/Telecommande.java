@@ -2,42 +2,27 @@ import java.util.ArrayList;
 
 public class Telecommande {
 
-    private ArrayList<Lampe> lampes;
+    private ArrayList<Appareil> appareils;
 
     public Telecommande() {
-        lampes = new ArrayList<>();
+        appareils = new ArrayList<>();
     }
 
-    public void ajouterLampe(Lampe lampe) {
-        lampes.add(lampe);
+    public void ajouterAppareil(Appareil a) {
+        appareils.add(a);
     }
 
-    public void activerLampe(int indiceLampe) {
-        if (indiceLampe < 0 || indiceLampe >= lampes.size()) {
+    public void activerAppareil(int i) {
+        if (i < 0 || i >= appareils.size()) {
             throw new Error("Indice invalide");
         }
-        lampes.get(indiceLampe).allumer();
+        appareils.get(i).allumer();
     }
 
-    public void desactiverLampe(int indiceLampe) {
-        if (indiceLampe < 0 || indiceLampe >= lampes.size()) {
+    public void desactiverAppareil(int i) {
+        if (i < 0 || i >= appareils.size()) {
             throw new Error("Indice invalide");
         }
-        lampes.get(indiceLampe).eteindre();
-    }
-
-    public void activerTout() {
-        for (Lampe l : lampes) {
-            l.allumer();
-        }
-    }
-
-    @Override
-    public String toString() {
-        String result = "";
-        for (int i = 0; i < lampes.size(); i++) {
-            result += i + " : " + lampes.get(i) + "\n";
-        }
-        return result;
+        appareils.get(i).eteindre();
     }
 }
