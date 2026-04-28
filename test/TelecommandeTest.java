@@ -1,5 +1,7 @@
-import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TelecommandeTest {
 
@@ -52,10 +54,34 @@ public class TelecommandeTest {
     }
 
     @Test
-    (expected = Error.class)
     public void testactiverAppareilInexistante() {
         Telecommande t = new Telecommande();
 
         t.activerAppareil(0);
+    }
+    @Test
+    public void testActiverCheminee() {
+        Telecommande t = new Telecommande();
+        Cheminee c = new Cheminee();
+        Appareil adapter = new AdapterCheminee(c);
+
+        t.ajouterAppareil(adapter);
+
+        t.activerAppareil(0);
+
+        assertEquals(10, c.getLumiere());
+    }
+    @Test
+    public void testDesactiverCheminee() {
+        Telecommande t = new Telecommande();
+        Cheminee c = new Cheminee();
+        Appareil adapter = new AdapterCheminee(c);
+
+        t.ajouterAppareil(adapter);
+
+        t.activerAppareil(0); // on allume d'abord
+        t.desactiverAppareil(0);
+
+        assertEquals(0, c.getLumiere());
     }
 }
