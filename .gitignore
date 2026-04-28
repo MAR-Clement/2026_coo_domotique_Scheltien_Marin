@@ -1,4 +1,4 @@
 *.class
-*.inl
+*.iml
 .idea/
 out/
