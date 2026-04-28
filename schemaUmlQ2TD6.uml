@@ -1,0 +1,44 @@
+@startuml
+class Hifi{
+-son : int
++toString()
+}
+
+class Television{
+-son : int
++toString()
+}
+
+Interface Appareil{
++AllumerAppareil()
++EteindreAppareil()
++Augmenter()
++Baisser()
+}
+
+class Telecommande{
+-appareils : List<Object>
+-lampes: Lampe[]
+-hifis: Hifi[]
++ajouterAppareil()
+}
+
+class Lampe{
+-nom: String
++toString()
+}
+
+class Adapteur{
+- c : Cheminee
+}
+
+class Cheminee{
+}
+
+Appareil"1..*" <-up- Telecommande
+Appareil <|... Hifi
+Appareil <|... Lampe
+Appareil <|... Television
+Cheminee "1" <-up- Adapteur
+Appareil <|... Adapteur
+@enduml
