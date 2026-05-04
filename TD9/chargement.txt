@@ -1,0 +1,3 @@
+Nous avons un objet main, dans ce cas nommé r, qui appelle la classe chargeur avec la méthode ChargeurMagasin, pour (comme le nom l'indique) charger un magasin, le main appelle ensuite Magasin grace à la méthode chargerMagasin(), (on ouvre le magasin), une fois le magasin ouvert, celui ci va appeler un chargeur de CD, pour pouvoir charger des CDs.
+Enfin, les chargeurCDs créent des objets de type CD, qui prennet en parametre un artiste et un nom de CD, et qui appellent leurs différentes méthodes.
+Finalement, le chargeurMagasin peut ajouter des CDs, et fermer le programme. 
